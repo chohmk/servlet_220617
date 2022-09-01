@@ -1,10 +1,12 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메뉴 검색</title>
+<title>quiz09</title>
 <!-- bootstrap CDN link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -13,16 +15,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container">
-		<h1>메뉴 검색</h1>
-		<form method="post" action="/lesson02/quiz07_1.jsp">
-			<div class="d-flex">
-				<input type="text" name="keyword" class="form-control col-2">
-				<label for="starPointFilter"><input type="checkbox" id="starPointFilter" name="starPointFilter" value="starPointFilter" class="ml-1 mt-2"><span class="ml-1">4점 이하 제외</span></label>
-			</div>
-			<button type="submit" class= "btn btn-success mt-2">검색</button>
-		</form>
+	<%
+		Calendar today = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("오늘부터 1일");
+		
+		out.print(sdf.format(today.getTime()));
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy년 MM월 dd일");
+		Calendar tomorrow = Calendar.getInstance();
+		
+		
+	%>
+	<%
+	
+	%>
+	<div>
+		<div>100일:</div>
+		
 	</div>
+
 
 </body>
 </html>
