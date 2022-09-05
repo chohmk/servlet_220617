@@ -18,10 +18,14 @@
   
   <style>
   	
-  	header {height:50px;}
+  	header {height:50px; margin:10px;}
   	nav {height:50px;}
-  	.search-bar {width:450px;}
+  	.content1 {height:280px;}
+  	.content1-box {width:1200px; height:250px; border:1px solid green; margin-left:10px;}
+  	.img1 {margin-top:12px; margin-left:12px; margin-bottom:12px;}
   	
+  	.content2 {height:350px;}
+  	.search-bar {width:450px;}
   	
   </style>
 </head>
@@ -110,9 +114,12 @@
 	
 	<div class="wrap">
 		<jsp:include page="header.jsp"/>
+
 		<jsp:include page="menu.jsp"/>
-		<jsp:include page="list.jsp"/>
-		<jsp:include page="footer.jsp"/>		
+
+		<jsp:include page="info.jsp"/>
+		<jsp:include page="footer.jsp"/>
+		
 	</div>
 
 </body>

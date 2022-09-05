@@ -1,32 +1,10 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>노래 정보</title>
-<!-- bootstrap CDN link -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-  <style>
-  	
-  	header {height:50px;}
-  	nav {height:50px;}
-  	.search-bar {width:450px;}
-  	
-  	
-  </style>
-</head>
-<body>
-	<%
+<%
 	// 아티스트 정보 
 
 	Map<String, Object> artistInfo = new HashMap<>();
@@ -106,14 +84,31 @@
 	musicInfo.put("composer", "아이유,이종훈,이채규");
 	musicInfo.put("lyricist", "아이유");
 	musicList.add(musicInfo);
-	%>
 	
-	<div class="wrap">
-		<jsp:include page="header.jsp"/>
-		<jsp:include page="menu.jsp"/>
-		<jsp:include page="list.jsp"/>
-		<jsp:include page="footer.jsp"/>		
-	</div>
+	int id = Integer.valueOf(request.getParameter("id"));
+	
+	
+	%>
 
-</body>
-</html>
+<h4 class="mt-4">곡 정보</h4>
+<div class="d-flex border border-success p-3">
+	<div class="col-2">
+		<img src="<%= musicInfo.get("thumbnail") %>" alt="앨범 이미지" width="150px">
+	</div>
+	<div class="col-10">
+		<h3><%=musicInfo.get("title")%></h3>
+		<div><%=musicInfo.get("singer")%></div>
+		<div><%=musicInfo.get("album")%></div>
+		<div><%=musicInfo.get("composer")%></div>
+		<div><%=musicInfo.get("lyricist")%></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
