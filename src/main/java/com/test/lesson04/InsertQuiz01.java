@@ -1,6 +1,7 @@
 package com.test.lesson04;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,11 @@ public class InsertQuiz01 extends HttpServlet{
 		// insert DB
 		String insertQuery = "insert into `favorite` (`name`, `url`)"
 				+ " values ('" + name + "', '" + url +"')";
-		
+		try {
+			ms.update(insertQuery);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		// 연결 해제
 		ms.disconnect();
 		
