@@ -41,9 +41,11 @@
 					
 				%>
 					<tr>
-						<td><a href ="<%= result.getString("name") %>"></a><%= result.getString("name") %></td>
-						<td><a href ="<%= result.getString("url") %>"></a><%= result.getString("url") %></td>
-						<td><a href="/lesson04/quiz02_delete?id=<%= result.getInt("id") %>">삭제하기</a></td>
+						<td><%= result.getString("name") %></td>
+						<td>
+							<a href="<%= result.getString("url") %>" target="_blank"><%= result.getString("url") %></a>
+						</td>
+						<td><a href="/lesson04/quiz01_delete?id=<%= result.getInt("id") %>">삭제하기</a></td>
 					</tr>
 				<%
 					}

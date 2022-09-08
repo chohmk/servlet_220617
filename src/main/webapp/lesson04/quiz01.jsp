@@ -13,15 +13,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="wrap">
+<div class="container">
 <form method="post" action="/lesson04/quiz01_insert">
 	<h1>즐겨찾기 추가</h1>
-	<div class="font-weight-bold">사이트명:</div>
-	<input type="text" name="name" class="form-control col-3">
-	<br>
-	<div class="font-weight-bold">사이트 주소:</div>
-	<input type="text" name="url" class="form-control col-6">
-	<br>
+	<label for="name">사이트명:</label>
+	<input type="text" id="name" name="name" class="form-control col-3">
+	
+	<label for="name">사이트 주소:</label>
+	<input type="text" id="url" name="url" class="form-control col-6">
+	
 	<button type="submit" class="btn btn-success">추가</button>
 </form>
 </div>
