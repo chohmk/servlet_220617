@@ -40,21 +40,29 @@
 	<div class="wrap container">
 		<h1>물건 올리기</h1>
 		<form method="post" action="/lesson04/quiz3.jsp">
-			<select class="row d-flex text-center">
-			<option class="form-control">--아이디 선택-</option>
-			<%
-				while(result.next()) {
+			<div class="d-flex">
+				<select class="row d-flex text-center mt-5">
+				<option class="form-control">--아이디 선택-</option>
+				<%
+					while(result.next()) {
+						
+				%>
 					
-			%>
+					<option><%= result.getString("nickname") %></option>
+				<%
+					}
+				%>
+				</select>
 				
-				<option><%= result.getString("nickname") %></option>
-			<%
-				}
-			%>
-			</select>
+				<input type="text" name="title" id="title" placeholder="제목" class="form-control col-3 ml-5 mt-5">
+				<input type="text" name="price" id="price" placeholder="가격" class="form-control col-2 ml-5 mt-5">
+			</div>
 			
-			<input type="text" name="title" id="title" placeholder="제목" class="form-control col-3">
-			
+			<textarea name="textarea" cols="50" rows="10" class="w-75 mt-5"></textarea>
+			<div class="d-flex">
+				<button>이미지url</button><input type="text" class="form-control w-75">
+			</div>
+			<button class="submit form-control mt-3 bg-secondary col-9">저장</button>
 		</form>
 	</div>
 
